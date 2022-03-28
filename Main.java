@@ -271,6 +271,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        //Display Test Matrices
+        System.out.println("Test Matrix One:\n");
+        printMatrix(test1);
+        System.out.println("Test Matrix Two:\n");
+        printMatrix(test2);
+
         // Test classic matrix multiplication
         System.out.println("Classic Matrix Multiplication:\n");
         printMatrix(classicMatrixMult(test1, test2));
@@ -284,13 +290,13 @@ public class Main {
         printMatrix(strassenMatrixMult(test1, test2));
 
         // Multiplying random matrices
-        System.out.println("Classical Multiplication with Random Matrices of size 10 x 10\n");
-        printMatrix(classicMatrixMult(randomMatrix(10), randomMatrix(10)));
+        System.out.println("Classical Multiplication with Random Matrices of size 16 x 16:\n");
+        printMatrix(classicMatrixMult(randomMatrix(16), randomMatrix(16)));
 
-        System.out.println("Naive Divide and Conquer Multiplication with Random Matrices of size 10\n");
-        printMatrix(classicMatrixMult(randomMatrix(10), randomMatrix(10)));
+        System.out.println("Naive Divide and Conquer Multiplication with Random Matrices of size 16 x 16:\n");
+        printMatrix(classicMatrixMult(randomMatrix(16), randomMatrix(16)));
 
-        System.out.println("Strassen Multiplication with Random Matrices of size 10\n");
-        printMatrix(classicMatrixMult(randomMatrix(10), randomMatrix(10)));
+        System.out.println("Strassen Multiplication with Random Matrices of size 16 x 16:\n");
+        printMatrix(classicMatrixMult(randomMatrix(16), randomMatrix(16)));
     }
 }
