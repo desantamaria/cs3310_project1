@@ -286,7 +286,7 @@ public class Main {
         printMatrix(result);*/
 
         // Multiplying random matrices
-        testRandom(16);
+        testRandom(256);
         
     }
 
@@ -294,7 +294,7 @@ public class Main {
     private static void testRandom(int n) {
 
         System.out.println("Classical Multiplication with Random Matrices of size " + n + " x "+ n +":\n");
-        printMatrix(classicMatrixMult(randomMatrix(n), randomMatrix(n))); 
+        classicMatrixMult(randomMatrix(n), randomMatrix(n));
 
         System.out.println("Naive Divide and Conquer Multiplication with Random Matrices of size " + n + " x "+ n +":\n");
         int [][] randomMatrix1 = randomMatrix(n);
