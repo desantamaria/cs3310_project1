@@ -3,33 +3,6 @@ import java.util.Random;
 
 public class Main {
 
-    // --- Test Matrices ---
-
-    private static int[][] test1 = {
-        {2, 0, -1, 6},
-        {3, 7, 8, 0},
-        {-5, 1, 6, -2},
-        {8, 0, 2, 7}
-    };
-
-    private static int[][] test2 = {
-        {0, 1, 6, 3},
-        {-2, 8, 7, 1},
-        {2, 0, -1, 0},
-        {9, 1, 6, -2}
-    };
-
-    /* Solution for test1 * test2 = 
-        
-        |   52  8   49  -6  |
-        |   2   59  59  16  |
-        |   -8  1   -41 -10 |
-        |   67  15  88  10  |
-
-    */
-
-    // --- End of Test Matrices ---
-
     // Generate Random Matrices of size n x n
     private static int[][] randomMatrix(int n) {
         Random r=new Random();
@@ -40,7 +13,6 @@ public class Main {
               }
         }
         //printMatrix(a);
-        System.out.print("\n");
         return a;
     }
 
@@ -82,7 +54,7 @@ public class Main {
         //Calculating the runtime in nanoseconds
         long end = System.nanoTime();
         long elapsedTime = end - start;
-        System.out.println("Elapsed Time in nanoseconds: " + elapsedTime);
+        System.out.println("Elapsed Time in nanoseconds: " + elapsedTime + "\n");
         return result;
     }
 
@@ -255,65 +227,36 @@ public class Main {
         return result;
     }
 
-    public static void main(String[] args) {
-        /*/Display Test Matrices
-        System.out.println("Test Matrix One:\n");
-        printMatrix(test1);
-        System.out.println("Test Matrix Two:\n");
-        printMatrix(test2);
-
-
-        // Test classic matrix multiplication
-        System.out.println("Classic Matrix Multiplication:\n");
-        printMatrix(classicMatrixMult(test1, test2));
-
-        // Test naive divide and conquer matrix multiplication
-        System.out.println("Naive Divide and Conquer Matrix Multiplication:\n");
-            long start = System.nanoTime(); //Starting the runtime count in nanoseconds
-            int [][] result = naiveDivConquerMatrixMult(test1, test2);
-            long end = System.nanoTime(); //Calculating the runtime in nanoseconds
-            long elapsedTime = end - start;
-            System.out.println("Elapsed Time in nanoseconds: " + elapsedTime);
-        printMatrix(result);
-
-        // Test strassen matrix multiplication
-        System.out.println("Strassen Matrix Multiplication:\n");
-            start = System.nanoTime();
-            result = strassenMatrixMult(test1, test2);
-            end = System.nanoTime(); //Calculating the runtime in nanoseconds
-            elapsedTime = end - start;
-            System.out.println("Elapsed Time in nanoseconds: " + elapsedTime);
-        printMatrix(result);*/
-
+    public static void main(String[] args) {  
         // Multiplying random matrices
-        testRandom(256);
-        
+        testRandom(256); 
     }
 
     // Multiplying random matrices of size n x n
     private static void testRandom(int n) {
 
-        System.out.println("Classical Multiplication with Random Matrices of size " + n + " x "+ n +":\n");
+        System.out.print("\n");
+        System.out.println("Classical Multiplication with Random Matrices of size " + n + " x "+ n +":");
         classicMatrixMult(randomMatrix(n), randomMatrix(n));
 
-        System.out.println("Naive Divide and Conquer Multiplication with Random Matrices of size " + n + " x "+ n +":\n");
+        System.out.println("Naive Divide and Conquer Multiplication with Random Matrices of size " + n + " x "+ n +":");
         int [][] randomMatrix1 = randomMatrix(n);
         int [][] randomMatrix2 = randomMatrix(n);
             long start = System.nanoTime();
             int [][] result = naiveDivConquerMatrixMult(randomMatrix1, randomMatrix2);
             long end = System.nanoTime(); 
             long elapsedTime = end - start; //Calculating the runtime in nanoseconds
-            System.out.println("Elapsed Time in nanoseconds: " + elapsedTime);
+            System.out.println("Elapsed Time in nanoseconds: " + elapsedTime + "\n");
         //printMatrix(result);
 
-        System.out.println("Strassen Multiplication with Random Matrices of size " + n + " x "+ n +":\n");
+        System.out.println("Strassen Multiplication with Random Matrices of size " + n + " x "+ n +":");
         randomMatrix1 = randomMatrix(n);
         randomMatrix2 = randomMatrix(n);
             start = System.nanoTime();
             result = strassenMatrixMult(randomMatrix1, randomMatrix2);
             end = System.nanoTime(); 
             elapsedTime = end - start; //Calculating the runtime in nanoseconds
-            System.out.println("Elapsed Time in nanoseconds: " + elapsedTime);
+            System.out.println("Elapsed Time in nanoseconds: " + elapsedTime + "\n");
         //printMatrix(result);
     }
 }
