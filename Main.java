@@ -39,7 +39,7 @@ public class Main {
                 a[i][j]=r.nextInt(20);
               }
         }
-        printMatrix(a);
+        //printMatrix(a);
         System.out.print("\n");
         return a;
     }
@@ -256,7 +256,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        //Display Test Matrices
+        /*/Display Test Matrices
         System.out.println("Test Matrix One:\n");
         printMatrix(test1);
         System.out.println("Test Matrix Two:\n");
@@ -283,7 +283,7 @@ public class Main {
             end = System.nanoTime(); //Calculating the runtime in nanoseconds
             elapsedTime = end - start;
             System.out.println("Elapsed Time in nanoseconds: " + elapsedTime);
-        printMatrix(result);
+        printMatrix(result);*/
 
         // Multiplying random matrices
         testRandom(16);
@@ -304,7 +304,7 @@ public class Main {
             long end = System.nanoTime(); 
             long elapsedTime = end - start; //Calculating the runtime in nanoseconds
             System.out.println("Elapsed Time in nanoseconds: " + elapsedTime);
-        printMatrix(result);
+        //printMatrix(result);
 
         System.out.println("Strassen Multiplication with Random Matrices of size " + n + " x "+ n +":\n");
         randomMatrix1 = randomMatrix(n);
@@ -314,6 +314,6 @@ public class Main {
             end = System.nanoTime(); 
             elapsedTime = end - start; //Calculating the runtime in nanoseconds
             System.out.println("Elapsed Time in nanoseconds: " + elapsedTime);
-        printMatrix(result);
+        //printMatrix(result);
     }
 }
